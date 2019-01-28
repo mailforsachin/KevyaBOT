@@ -43,7 +43,7 @@ namespace Kevya.Dialogs.Main
         protected override async Task RouteAsync(DialogContext dc, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Check dispatch result
-            var dispatchResult = await _services.DispatchRecognizer.RecognizeAsync<Dispatch>(dc, true, CancellationToken.None);
+            var dispatchResult =  await _services.DispatchRecognizer.RecognizeAsync<Dispatch>(dc, true, CancellationToken.None);
             var intent = dispatchResult.TopIntent().intent;
 
             if (intent == Dispatch.Intent.l_general)
