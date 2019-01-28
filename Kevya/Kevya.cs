@@ -23,7 +23,7 @@ namespace Kevya
         private DialogSet _dialogs;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Kevya"/> class.
+        /// Initializes a  new instance of the <see cref="Kevya"/> class.
         /// </summary>
         /// <param name="botServices">Bot services.</param>
         /// <param name="conversationState">Bot conversation state.</param>
@@ -33,7 +33,7 @@ namespace Kevya
             _conversationState = conversationState ?? throw new ArgumentNullException(nameof(conversationState));
             _userState = userState ?? throw new ArgumentNullException(nameof(userState));
             _services = botServices ?? throw new ArgumentNullException(nameof(botServices));
-            _telemetryClient = telemetryClient ?? throw new ArgumentNullException(nameof(telemetryClient));
+            _telemetryClient = telemetryClient ?? throw new  ArgumentNullException(nameof(telemetryClient));
 
             _dialogs = new DialogSet(_conversationState.CreateProperty<DialogState>(nameof(Kevya)));
             _dialogs.Add(new MainDialog(_services, _conversationState, _userState, _telemetryClient));
